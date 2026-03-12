@@ -36,19 +36,27 @@ nav a:hover{color:#d4a017;}
 .hero {
   position: relative;
   width: 100%;
-  text-align: center;
-  color: white;
+  height: 100vh; /* div prend toute la hauteur de l'écran */
+  overflow: hidden; /* pour éviter que l'image dépasse */
 }
+
 .hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* couvre tout le div sans déformer */
+  z-index: -1; /* derrière le texte */
 }
+
 .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0 20px;
+  text-align: center;
 }
 .hero-text h1{font-size:50px;margin-bottom:20px;}
 .hero-text p{max-width:700px;margin:auto;font-size:18px;}
@@ -324,3 +332,4 @@ filterButtons.forEach(btn => {
 
 </body>
 </html>
+
