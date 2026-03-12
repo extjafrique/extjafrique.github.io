@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="icon.png">
+<title>ExTJ Afrique</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f8;color:#333;}
+
+/* HEADER */
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;transition:.3s;}
+header.scrolled{padding:12px 6%;box-shadow:0 5px 20px rgba(0,0,0,0.15);}
+.logo{font-size:22px;font-weight:700;color:#0b6e4f;}
+nav{display:flex;gap:30px;}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:.3s;}
+nav a:hover{color:#d4a017;}
+
+/* HAMBURGER */
+.menu-btn{display:none;flex-direction:column;cursor:pointer;}
+.menu-btn span{height:3px;width:25px;background:#333;margin:4px 0;transition:.4s;}
+.menu-btn.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.menu-btn.open span:nth-child(2){opacity:0;}
+.menu-btn.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+
+/* HERO */
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("imageAcceuil.png");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px;}
+.hero h1{font-size:50px;margin-bottom:20px;}
+.hero p{max-width:700px;margin:auto;font-size:18px;}
+.hero button{margin-top:30px;padding:15px 35px;border:none;background:#d4a017;color:white;font-size:16px;border-radius:6px;cursor:pointer;transition:.3s;}
+.hero button:hover{background:#0b6e4f;transform:scale(1.05);}
+
+/* SECTIONS */
+section{padding:100px 6%;}
+.title{text-align:center;font-size:34px;margin-bottom:60px;color:#0b6e4f;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;justify-items:center;}
+.card{background:white;padding:15px 15px 30px 15px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:.4s, opacity 0.5s; font-size:14px;text-align:center;opacity:1;}
+.card.hide{opacity:0;transform:scale(0.95);pointer-events:none;height:0;margin:0;padding:0;overflow:hidden;transition:all 0.5s ease;}
+.card h3{color:#d4a017;margin-bottom:10px;}
+.card p{margin-bottom:15px;}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;}
+.card i.icon{font-size:30px;color:#0b6e4f;margin-bottom:15px;display:block;text-align:center;}
+.card button.read-more{padding:8px 15px;margin-top:10px;border:none;border-radius:5px;background:#d4a017;color:white;cursor:pointer;transition:.3s;}
+.card button.read-more:hover{background:#0b6e4f;}
+
+/* ACTUALITES */
+.news{background:#eef3f2;}
+.country-filter{text-align:center;margin-bottom:40px;}
+.country-filter button{margin:5px;padding:10px 18px;border:none;border-radius:20px;background:#ddd;cursor:pointer;transition:.3s;}
+.country-filter button:hover{background:#0b6e4f;color:white;}
+
+/* STATS */
+.stats{background:#0b6e4f;color:white;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center;}
+.stat{padding:60px;}
+.stat h2{font-size:45px;margin-bottom:10px;}
+.stat p{font-size:18px;}
+
+/* CTA */
+.cta{background:#0b6e4f;color:white;text-align:center;padding:80px 20px;}
+.cta button{margin-top:20px;padding:14px 30px;border:none;background:#d4a017;color:white;border-radius:5px;cursor:pointer;}
+
+/* FOOTER */
+footer{background:#111;color:#bbb;padding:60px 6%;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;}
+footer h3{color:white;margin-bottom:15px;}
+footer a{display:block;color:#bbb;text-decoration:none;margin-bottom:8px;}
+footer a:hover{color:white;}
+.footer-bottom{margin-top:40px;text-align:center;}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:all 1s;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:768px){
+.menu-btn{display:flex;}
+nav{position:fixed;top:0;left:-100%;height:100%;width:260px;background:white;flex-direction:column;padding-top:80px;gap:20px;transition:.4s;z-index:1001;}
+nav a{padding:15px 30px;}
+nav.active{left:0;}
+.hero h1{font-size:34px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">ExTJ Afrique</div>
+<div class="menu-btn" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<nav id="menu">
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+<a href="#">Communauté</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero reveal">
+<div>
+<h1>Ex Témoins de Jéhovah en Afrique</h1>
+<p>Plateforme indépendante pour les témoignages, analyses et informations sur l'organisation des Témoins de Jéhovah en Afrique.</p>
+<a href="temoignage.html" style="text-decoration: none; color: white;"><button>Lire les témoignages</button></a>
+</div>
+</div>
+
+<!-- MISSION -->
+<section class="reveal">
+<h2 class="title">Notre Objectif</h2>
+<div class="grid">
+<div class="card reveal">
+<i class="fas fa-book-open icon"></i>
+<h3>Informer</h3>
+<p>Analyser les doctrines et pratiques de cette organisation.</p>
+<img src="imageDoctrine.png" alt="">
+</div>
+<div class="card reveal">
+<i class="fas fa-hands-helping icon"></i>
+<h3>Soutenir</h3>
+<p>Aider ceux qui quittent ou veulent quitter cette organisation à reconstruire leur vie autour d'une nouvelle communauté.</p>
+<img src="imageCommunaute.png" alt="">
+</div>
+<div class="card reveal">
+<i class="fas fa-comments icon"></i>
+<h3>Donner la parole</h3>
+<p>Publier les témoignages d'anciens membres africains.</p>
+<img src="imageTemoignage.png" alt="">
+</div>
+</div>
+</section>
+
+<!-- ACTUALITES PAR PAYS -->
+<section class="news reveal">
+<h2 class="title">Actualités récentes par pays</h2>
+<div class="country-filter">
+<button data-country="all">Tous</button>
+<button data-country="Côte d'Ivoire">Côte d'Ivoire</button>
+<button data-country="Congo">Congo</button>
+</div>
+<div class="grid">
+<div class="card reveal" data-country="Côte d'Ivoire">
+<i class="fas fa-globe-africa icon"></i>
+<h3>Côte d'Ivoire</h3>
+<img src="imageSalomon.jpg" alt="">
+<p>Un ancien Bethelite quitte les Témoins de Jehovah...</p>
+<a href="actualite.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+</div>
+
+<div class="card reveal" data-country="Côte d'Ivoire">
+<i class="fas fa-globe-africa icon"></i>
+<h3>Côte d'Ivoire</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Fresh_blood.jpg" alt="">
+<p>Elle meurt en refusant le sang...</p>
+<a href="actualite.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+</div>
+
+<div class="card reveal" data-country="Congo">
+<i class="fas fa-globe-africa icon"></i>
+<h3>Congo</h3>
+<img src="https://www.coolearth.org/wp-content/uploads/2024/09/RS3588_GCE-x-Cool-Earth-1.png" alt="">
+<p>Un ancien Bethelite quitte les Témoins de Jehovah au Congo...</p>
+<a href="actualite.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+</div>
+
+
+<div class="card reveal" data-country="Congo">
+<i class="fas fa-globe-africa icon"></i>
+<h3>Congo</h3>
+<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/67/1d/4c/kingdom-hall-of-jehovah.jpg?w=900&h=500&s=1" alt="">
+<p>Il quitte les Temoin de Jehovah avec toute sa famille...</p>
+<a href="actualite.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+</div>
+
+</div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="news reveal">
+<h2 class="title">Témoignages</h2>
+<div class="grid">
+<div class="card reveal">
+<i class="fas fa-user icon"></i>
+<h3>Jean, Côte d'Ivoire</h3>
+<img src="imageJean.png" alt="">
+<p>"J'ai quitté l'organisation et retrouvé ma liberté grâce au soutien de cette communauté."</p>
+<a href="temoignage.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+</div>
+<div class="card reveal">
+<i class="fas fa-user icon"></i>
+<h3>Marie, Congo</h3>
+<img src="imageMarie.png" alt="">
+<p>"Partager mon témoignage m'a aidé à guérir et à rencontrer d'autres personnes dans le même chemin."</p>
+<a href="temoignage.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal">
+<h2>Rejoint la communauté</h2>
+<p>Partage ton témoignage et aide d'autres personnes.</p>
+<a href="https://wa.me/+2250556348843" style="text-decoration: none; color: white;"><button>Envoyer un témoignage</button></a>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal">
+<div class="footer-grid">
+<div>
+<h3>ExTJ Afrique</h3>
+<p>Plateforme indépendante d'information et de soutien.</p>
+</div>
+<div>
+<h3>Navigation</h3>
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Temoignages</a>
+</div>
+<div>
+<h3>Ressources</h3>
+<a href="document.html">Documents</a>
+<a href="faq.html">FAQ</a>
+</div>
+<div>
+<h3>Contact</h3>
+<a href="salomongueable@gmail.com">Email</a>
+<a href="https://wa.me/+2250556348843">Whatsapp</a>
+<a href="#">Facebook</a>
+</div>
+</div>
+<div class="footer-bottom">
+© 2026 ExTJ Afrique
+</div>
+</footer>
+
+<!-- BOUTON RETOUR EN HAUT -->
+<button id="topBtn" style="display:none;position:fixed;bottom:40px;right:30px;background:#d4a017;border:none;padding:12px 18px;border-radius:50%;font-size:20px;cursor:pointer;z-index:1000;">↑</button>
+
+<script>
+// MENU MOBILE
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+menuBtn.addEventListener("click", function(){
+menu.classList.toggle("active");
+menuBtn.classList.toggle("open");
+});
+
+// SCROLL EFFECT NAVBAR
+window.addEventListener("scroll",function(){
+const header=document.querySelector("header");
+header.classList.toggle("scrolled",window.scrollY>50);
+});
+
+// REVEAL ANIMATION
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=150;
+if(elementTop<windowHeight-elementVisible){
+reveals[i].classList.add("active");
+}
+}}
+window.addEventListener("scroll",reveal);
+
+// BOUTON RETOUR EN HAUT
+let btn=document.getElementById("topBtn");
+window.onscroll=function(){
+if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){
+btn.style.display="block";
+}else{btn.style.display="none";}
+};
+btn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+
+// FILTRE DES ACTUALITES PAR PAYS
+const filterButtons = document.querySelectorAll('.country-filter button');
+const newsCards = document.querySelectorAll('.news .card');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const country = btn.getAttribute('data-country');
+    newsCards.forEach(card => {
+      if (country === "all" || card.getAttribute('data-country') === country) {
+        card.classList.remove('hide');
+      } else {
+        card.classList.add('hide');
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
