@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="icon.png">
+<title>ExTJ Afrique</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f8;color:#333;}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 6%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
+transition:.3s;
+}
+
+header.scrolled{
+padding:12px 6%;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:#0b6e4f;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4a017;
+}
+
+/* MENU MOBILE */
+
+.menu-btn{
+display:none;
+flex-direction:column;
+cursor:pointer;
+}
+
+.menu-btn span{
+height:3px;
+width:25px;
+background:#333;
+margin:4px 0;
+transition:.4s;
+}
+
+.menu-btn.open span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+.menu-btn.open span:nth-child(2){
+opacity:0;
+}
+
+.menu-btn.open span:nth-child(3){
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 6%;
+}
+
+.title{
+text-align:center;
+font-size:34px;
+margin-bottom:60px;
+color:#0b6e4f;
+}
+
+/* ARTICLE */
+
+.article-container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.article-container img{
+width:160px;
+border-radius:10px;
+margin-bottom:25px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.article-container h1{
+font-size:36px;
+color:#0b6e4f;
+margin-bottom:10px;
+text-align:center;
+}
+
+.article-meta{
+color:#888;
+margin-bottom:30px;
+text-align:center;
+}
+
+.article-container h2{
+color:#d4a017;
+margin-top:35px;
+margin-bottom:10px;
+}
+
+.article-container p{
+line-height:1.8;
+margin-bottom:15px;
+font-size:16px;
+}
+
+/* CTA */
+
+.cta{
+background:#0b6e4f;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.cta button{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+background:#d4a017;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#bbb;
+padding:60px 6%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer h3{
+color:white;
+margin-bottom:15px;
+}
+
+footer a{
+display:block;
+color:#bbb;
+text-decoration:none;
+margin-bottom:8px;
+}
+
+footer a:hover{
+color:white;
+}
+
+.footer-bottom{
+margin-top:40px;
+text-align:center;
+}
+
+/* REVEAL */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-btn{display:flex;}
+
+nav{
+position:fixed;
+top:0;
+left:-100%;
+height:100%;
+width:260px;
+background:white;
+flex-direction:column;
+padding-top:80px;
+gap:20px;
+transition:.4s;
+z-index:1001;
+}
+
+nav a{padding:15px 30px;}
+
+nav.active{left:0;}
+
+.article-container{padding:25px;}
+
+.article-container h1{font-size:26px;}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ExTJ Afrique</div>
+
+<div class="menu-btn" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="menu">
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+<a href="#">Communauté</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section>
+
+<div class="article-container">
+
+<img src="imageSalomon.jpg">
+
+
+
+<h1>Du Béthel à la Liberté : Mon Histoire</h1>
+
+<div class="article-meta">
+Par <strong>Guelable Salomon</strong>
+</div>
+
+<p>
+Je m'appelle Guelable Salomon.  
+Le 11 novembre 2012, je me suis fait baptiser comme Témoin de Jéhovah. À ce moment-là, j’étais convaincu d’avoir trouvé la vérité. Pour moi, il ne faisait aucun doute : j’appartenais à la seule organisation que Dieu utilisait sur la terre.
+</p>
+
+<p>
+Comme beaucoup de jeunes croyants sincères, j’étais rempli de zèle. Je voulais faire toujours plus pour Dieu. Servir, prêcher, étudier… toute ma vie tournait autour de cela.
+</p>
+
+<p>
+Puis, en 2014, une chose extraordinaire est arrivée : j’ai été invité à servir au Béthel.
+</p>
+
+<p>
+Pour un Témoin de Jéhovah, servir au Béthel est un immense privilège. C’est le centre administratif de l’organisation. Beaucoup le considèrent comme l’endroit le plus spirituel sur terre.
+</p>
+
+<p>
+Je pensais être arrivé au sommet de ma vie spirituelle.
+</p>
+
+<p>
+Je ne savais pas encore qu’un jour, une simple vidéo sur Internet allait faire s’effondrer tout ce que je croyais savoir.
+</p>
+
+<h2>La vidéo que je ne voulais pas regarder</h2>
+
+<p>
+Un jour, alors que je naviguais sur YouTube, une vidéo est apparue dans mes recommandations.
+</p>
+
+<p>
+Le titre disait :
+</p>
+
+<p>
+<strong>« Témoins de Jéhovah vs Commission Royale Australienne »</strong>
+</p>
+
+<p>
+Instantanément, une alarme s’est déclenchée dans mon esprit.
+</p>
+
+<p>
+Dans l’organisation, on nous répète sans cesse :  
+<strong>« N’écoutez jamais les apostats. Ne regardez pas leurs vidéos. »</strong>
+</p>
+
+<p>
+Je me suis donc dit :  
+« Non… je ne dois pas cliquer. »
+</p>
+
+<p>
+Et il y avait une autre raison.
+</p>
+
+<p>
+Au Béthel, l’historique des ordinateurs est régulièrement vérifié par le département informatique. Regarder ce genre de contenu pouvait attirer l’attention.
+</p>
+
+<p>
+J’ai donc ignoré la vidéo… et je suis passé à autre chose.
+</p>
+
+<p>
+Mais le soir, une fois rentré chez moi, la même vidéo est réapparue dans mes recommandations YouTube.
+</p>
+
+<p>
+Cette fois, j’ai hésité quelques secondes.
+</p>
+
+<p>
+Puis je me suis dit :
+</p>
+
+<p>
+<strong>« Bon… je vais juste regarder quelques minutes. »</strong>
+</p>
+
+<p>
+Je ne savais pas que ces quelques minutes allaient changer ma vie.
+</p>
+
+<h2>La question qui a tout fait basculer</h2>
+
+<p>
+La vidéo montrait Geoffrey Jackson, membre du Collège Central des Témoins de Jéhovah, répondant aux questions d’un avocat devant une commission gouvernementale en Australie.
+</p>
+
+<p>
+Au début, j’étais même impressionné.
+</p>
+
+<p>
+Je me disais :
+</p>
+
+<p>
+« Il répond vraiment bien… il défend l’organisation. »
+</p>
+
+<p>
+Puis l’avocat lui a posé une question simple… mais extrêmement importante.
+</p>
+
+<p>
+<strong>
+« Considérez-vous que le Collège Central est le seul porte-parole de Dieu sur terre aujourd’hui ? »
+</strong>
+</p>
+
+<p>
+Je me suis redressé sur ma chaise.
+</p>
+
+<p>
+C’était LA question.
+</p>
+
+<p>
+Toute notre foi repose sur cette idée : que le Collège Central est le canal choisi par Dieu.
+</p>
+
+<p>
+Alors j’ai attendu la réponse avec confiance.
+</p>
+
+<p>
+Et puis Geoffrey Jackson a répondu :
+</p>
+
+<p>
+<strong>
+« Il serait présomptueux de dire cela. »
+</strong>
+</p>
+
+<p>
+Je suis resté figé.
+</p>
+
+<p>
+Je me suis dit :
+</p>
+
+<p>
+<strong>
+« Attends… quoi ? »
+</strong>
+</p>
+
+<p>
+J’ai immédiatement mis la vidéo en pause.
+</p>
+
+<p>
+Une pensée a traversé mon esprit :
+</p>
+
+<p>
+<strong>
+« Cette vidéo doit être un montage. Ce n’est pas possible. »
+</strong>
+</p>
+
+<h2>La découverte qui m’a choqué</h2>
+
+<p>
+J’ai commencé à faire des recherches pour vérifier si cette audience était réelle.
+</p>
+
+<p>
+Et là… j’ai découvert quelque chose qui m’a profondément troublé.
+</p>
+
+<p>
+Tout était vrai.
+</p>
+
+<p>
+La commission existait vraiment.
+</p>
+
+<p>
+L’audience était officielle.
+</p>
+
+<p>
+Et les vidéos provenaient directement des enregistrements du tribunal australien.
+</p>
+
+<p>
+Ce n’était pas une vidéo d’apostats.
+</p>
+
+<p>
+C’était la réalité.
+</p>
+
+<h2>La réaction au Béthel</h2>
+
+<p>
+Le lendemain, j’ai montré la vidéo à certains collègues au Béthel.
+</p>
+
+<p>
+Je pensais qu’ils seraient aussi surpris que moi.
+</p>
+
+<p>
+Mais leur réaction a été très différente.
+</p>
+
+<p>
+Ils m’ont immédiatement dit :
+</p>
+
+<p>
+« C’est de l’apostasie. Tu n’aurais jamais dû regarder ça. »
+</p>
+
+<p>
+On m’a même conseillé de ne plus jamais chercher d’informations sur Internet concernant l’organisation, sauf sur le site officiel JW.org.
+</p>
+
+<p>
+Mais à ce moment-là, quelque chose avait déjà changé en moi.
+</p>
+
+<p>
+Une question s’était installée dans mon esprit.
+</p>
+
+<p>
+Et cette question refusait de disparaître.
+</p>
+
+<h2>L’affaire de la Norvège</h2>
+
+<p>
+Quelques mois plus tard, une autre affaire judiciaire a attiré mon attention : le procès des Témoins de Jéhovah en Norvège.
+</p>
+
+<p>
+Sur JW.org, les informations étaient très limitées.
+</p>
+
+<p>
+Mais je voulais comprendre ce qui se passait réellement.
+</p>
+
+<p>
+Alors j’ai recommencé à chercher des informations sur Internet.
+</p>
+
+<p>
+Et j’ai découvert toute l’histoire.
+</p>
+
+<p>
+La Norvège n’interdisait pas les activités religieuses des Témoins de Jéhovah.
+</p>
+
+<p>
+Il s’agissait principalement d’une question de subventions financières accordées par l’État.
+</p>
+
+<p>
+Je me suis alors posé une question simple :
+</p>
+
+<p>
+<strong>
+Pourquoi l’organisation se bat-elle autant pour l’argent des gouvernements, alors qu’elle prêche la neutralité politique ?
+</strong>
+</p>
+
+<p>
+Et une autre question encore plus troublante :
+</p>
+
+<p>
+Pourquoi les membres du monde entier ne sont-ils jamais informés de ces financements ?
+</p>
+
+<p>
+Les questions se multipliaient dans mon esprit.
+</p>
+
+<h2>Le moment où tout s’est brisé</h2>
+
+<p>
+Le véritable point de rupture est arrivé lors de l’assemblée annuelle de 2023.
+</p>
+
+<p>
+Ce jour-là, Geoffrey Winder a déclaré qu’il n’était pas nécessaire de s’excuser si certaines compréhensions doctrinales étaient incorrectes dans le passé.
+</p>
+
+<p>
+Quand j’ai entendu cela… quelque chose s’est brisé en moi.
+</p>
+
+<p>
+Je me suis dit :
+</p>
+
+<p>
+<strong>
+« Donc ils peuvent se tromper… mais ils n’ont même pas besoin de s’excuser ? »
+</strong>
+</p>
+
+<p>
+À cet instant précis, j’ai compris que je ne pouvais plus suivre aveuglément des enseignements humains.
+</p>
+
+<p>
+Je devais chercher la vérité par moi-même.
+</p>
+
+<h2>La lettre qui a tout déclenché</h2>
+
+<p>
+Depuis ce jour j'ai alors entrepris d'etudier la bible de moi meme, sans passer par une quelconque publication de la watchtower. Et petit a petit je decouvre les erreurs grave dans les doctrines des Temoins de Jehovah. J’ai alors écrit une longue lettre au collège des anciens.
+</p>
+
+<p>
+Dans cette lettre, j’expliquais pourquoi plusieurs doctrines me semblaient erronées : 1914, la doctrine du sang, les 144 000, l’interdiction des fêtes et d’autres enseignements.
+</p>
+
+<p>
+Je leur ai demandé d’examiner mes arguments honnêtement.
+</p>
+
+<p>
+Mais au lieu d’en discuter avec moi…
+</p>
+
+<p>
+Ils ont immédiatement contacté le surveillant de circonscription.
+</p>
+
+<p>
+Ma lettre a été qualifiée d’« apostasie ».
+</p>
+
+<h2>La décision finale</h2>
+
+<p>
+Sans même organiser une réunion pour examiner mes arguments, les anciens ont recommandé ma destitution comme ancien.
+</p>
+
+<p>
+La décision a été approuvée.
+</p>
+
+<p>
+On m’a simplement informé que je n’étais plus ancien.
+</p>
+
+<p>
+Aucune discussion.
+</p>
+
+<p>
+Aucune analyse.
+</p>
+
+<p>
+Juste une décision.
+</p>
+
+<p>
+Finalement, le 17 juin 2024, j’ai envoyé une seconde lettre déclarant officiellement que je ne faisais plus partie des Témoins de Jéhovah.
+</p>
+
+<p>
+C’était une décision difficile.
+</p>
+
+<p>
+Mais c’était aussi le début d’une nouvelle liberté.
+</p>
+
+<p>
+Aujourd’hui, je partage mon histoire pour une raison simple :
+</p>
+
+<p>
+<strong>
+Personne ne devrait avoir peur de poser des questions.
+</strong>
+</p>
+
+<p>
+Chercher la vérité ne devrait jamais être considéré comme un crime.
+</p>
+
+</div>
+
+</section>
+
+<section class="cta reveal">
+
+<h2>Rejoint la communauté</h2>
+
+<p>Partage ton témoignage et aide d'autres personnes.</p>
+
+<a href="https://wa.me/+2250556348843" style="text-decoration:none;color:white;">
+<button>Envoyer un témoignage</button>
+</a>
+
+</section>
+
+<footer class="reveal">
+
+<div class="footer-grid">
+
+<div>
+<h3>ExTJ Afrique</h3>
+<p>Plateforme indépendante d'information et de soutien.</p>
+</div>
+
+<div>
+<h3>Navigation</h3>
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+</div>
+
+<div>
+<h3>Ressources</h3>
+<a href="document.html">Documents</a>
+<a href="faq.html">FAQ</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<a href="mailto:salomongueable@gmail.com">Email</a>
+<a href="https://wa.me/+2250556348843">Whatsapp</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 ExTJ Afrique
+</div>
+
+</footer>
+
+<button id="topBtn" style="display:none;position:fixed;bottom:40px;right:30px;background:#d4a017;border:none;padding:12px 18px;border-radius:50%;font-size:20px;cursor:pointer;z-index:1000;">↑</button>
+
+<script>
+
+const menuBtn=document.getElementById("menuBtn");
+const menu=document.getElementById("menu");
+
+menuBtn.onclick=function(){
+menu.classList.toggle("active");
+menuBtn.classList.toggle("open");
+};
+
+window.addEventListener("scroll",function(){
+document.querySelector("header").classList.toggle("scrolled",window.scrollY>50);
+});
+
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=150;
+
+if(elementTop<windowHeight-elementVisible){
+reveals[i].classList.add("active");
+}
+}
+}
+
+window.addEventListener("scroll",reveal);
+
+let btn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
+
+</script>
+
+</body>
+</html>
