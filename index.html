@@ -2,9 +2,11 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="icon.png">
+
 <title>ExTJ Afrique</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,8 +15,17 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f6f8;color:#333;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f6f8;
+color:#333;
+}
 
 /* HEADER */
 
@@ -29,12 +40,6 @@ padding:18px 6%;
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 z-index:1000;
-transition:.3s;
-}
-
-header.scrolled{
-padding:12px 6%;
-box-shadow:0 5px 20px rgba(0,0,0,0.15);
 }
 
 .logo{
@@ -52,51 +57,23 @@ nav a{
 text-decoration:none;
 color:#333;
 font-weight:500;
-transition:.3s;
-}
-
-nav a:hover{
-color:#d4a017;
-}
-
-/* HAMBURGER */
-
-.menu-btn{
-display:none;
-flex-direction:column;
-cursor:pointer;
-}
-
-.menu-btn span{
-height:3px;
-width:25px;
-background:#333;
-margin:4px 0;
-transition:.4s;
-}
-
-.menu-btn.open span:nth-child(1){
-transform:rotate(45deg) translate(5px,5px);
-}
-
-.menu-btn.open span:nth-child(2){
-opacity:0;
-}
-
-.menu-btn.open span:nth-child(3){
-transform:rotate(-45deg) translate(6px,-6px);
 }
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("imageAcceuil.png");
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("imageAcceuil.png");
+
 background-size:cover;
 background-position:center;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 text-align:center;
 color:white;
 padding:20px;
@@ -122,31 +99,33 @@ color:white;
 font-size:16px;
 border-radius:6px;
 cursor:pointer;
-transition:.3s;
-}
-
-.hero button:hover{
-background:#0b6e4f;
-transform:scale(1.05);
 }
 
 /* INTRO SECTION */
 
 .intro-section{
+
 padding:120px 6%;
-background:linear-gradient(135deg,#0b6e4f 0%, #083b2c 100%);
+
+background:linear-gradient(135deg,#0b6e4f 0%, #062d21 100%);
+
 color:white;
+
 position:relative;
+
 overflow:hidden;
+
 }
+
+/* decoratif */
 
 .intro-section::before{
 content:"";
 position:absolute;
-top:-100px;
-left:-100px;
-width:300px;
-height:300px;
+top:-150px;
+left:-150px;
+width:350px;
+height:350px;
 background:rgba(255,255,255,0.05);
 border-radius:50%;
 }
@@ -154,8 +133,8 @@ border-radius:50%;
 .intro-section::after{
 content:"";
 position:absolute;
-bottom:-120px;
-right:-120px;
+bottom:-150px;
+right:-150px;
 width:350px;
 height:350px;
 background:rgba(255,255,255,0.04);
@@ -163,223 +142,327 @@ border-radius:50%;
 }
 
 .intro-container{
-max-width:1100px;
+
+max-width:1200px;
+
 margin:auto;
+
 position:relative;
+
 z-index:2;
+
 }
 
 .intro-title{
-font-size:38px;
-margin-bottom:40px;
+
 font-family:'Playfair Display',serif;
-color:#ffd86b;
+
+font-size:42px;
+
 text-align:center;
+
+color:#ffd86b;
+
+margin-bottom:20px;
+
 }
 
 .intro-line{
-width:80px;
+
+width:90px;
+
 height:4px;
+
 background:#ffd86b;
-margin:20px auto 60px auto;
+
+margin:30px auto 70px auto;
+
 border-radius:5px;
+
 }
+
+/* GRID */
 
 .intro-grid{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
 gap:40px;
+
 }
 
+/* GLASS BOX */
+
 .intro-text{
+
 font-size:17px;
+
 line-height:1.9;
-background:rgba(255,255,255,0.06);
-padding:30px;
+
+background:rgba(255,255,255,0.08);
+
+padding:35px;
+
 border-radius:10px;
+
 backdrop-filter:blur(6px);
+
 transition:0.4s;
+
 }
 
 .intro-text:hover{
+
 transform:translateY(-6px);
-background:rgba(255,255,255,0.12);
+
+background:rgba(255,255,255,0.15);
+
 }
+
+/* LETTRE DECORATIVE */
 
 .intro-text:first-letter{
-font-size:36px;
-font-weight:700;
-color:#ffd86b;
+
+font-size:40px;
+
 font-family:'Playfair Display',serif;
+
+color:#ffd86b;
+
+font-weight:700;
+
 }
 
+/* CITATION */
+
 .intro-quote{
+
 text-align:center;
-font-size:22px;
-margin-top:70px;
+
+font-size:24px;
+
+margin-top:80px;
+
 font-family:'Playfair Display',serif;
+
 color:#ffd86b;
-max-width:700px;
+
+position:relative;
+
+}
+
+.intro-quote:before{
+
+content:"“";
+
+font-size:80px;
+
+position:absolute;
+
+left:30%;
+
+top:-40px;
+
+color:rgba(255,255,255,0.2);
+
+}
+
+/* MANIFESTE */
+
+.site-mission{
+
+margin-top:70px;
+
+max-width:850px;
+
 margin-left:auto;
+
 margin-right:auto;
+
+text-align:center;
+
+padding:45px;
+
+background:rgba(0,0,0,0.25);
+
+border-radius:10px;
+
+border-left:4px solid #ffd86b;
+
+border-right:4px solid #ffd86b;
+
+backdrop-filter:blur(8px);
+
+}
+
+.mission-title{
+
+font-family:'Playfair Display',serif;
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#ffd86b;
+
+}
+
+.mission-icon{
+
+font-size:32px;
+
+color:#ffd86b;
+
+margin-bottom:15px;
+
+}
+
+.site-mission p{
+
+font-size:18px;
+
+line-height:1.8;
+
+font-family:'Playfair Display',serif;
+
 }
 
 /* SECTIONS */
 
-section{padding:100px 6%;}
+section{
+
+padding:100px 6%;
+
+}
 
 .title{
+
 text-align:center;
+
 font-size:34px;
+
 margin-bottom:60px;
+
 color:#0b6e4f;
+
 }
 
 .grid{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
 gap:30px;
-justify-items:center;
+
 }
 
 .card{
-background:white;
-padding:15px 15px 30px 15px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:.4s, opacity 0.5s;
-font-size:14px;
-text-align:center;
-opacity:1;
-}
 
-.card.hide{
-opacity:0;
-transform:scale(0.95);
-pointer-events:none;
-height:0;
-margin:0;
-padding:0;
-overflow:hidden;
-transition:all 0.5s ease;
+background:white;
+
+padding:15px;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+text-align:center;
+
 }
 
 .card img{
+
 width:100%;
+
 height:180px;
+
 object-fit:cover;
+
 border-radius:8px;
-margin-bottom:10px;
-}
 
-.card h3{
-color:#d4a017;
 margin-bottom:10px;
-}
 
-.card button{
-padding:8px 15px;
-margin-top:10px;
-border:none;
-border-radius:5px;
-background:#d4a017;
-color:white;
-cursor:pointer;
 }
 
 .news{
+
 background:#eef3f2;
+
 }
 
 /* CTA */
 
 .cta{
+
 background:#0b6e4f;
+
 color:white;
+
 text-align:center;
+
 padding:80px 20px;
+
 }
 
 .cta button{
+
 margin-top:20px;
+
 padding:14px 30px;
+
 border:none;
+
 background:#d4a017;
+
 color:white;
+
 border-radius:5px;
-cursor:pointer;
+
 }
 
 /* FOOTER */
 
 footer{
+
 background:#111;
+
 color:#bbb;
+
 padding:60px 6%;
+
 }
 
 .footer-grid{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
 gap:40px;
+
 }
 
 footer h3{
-color:white;
-margin-bottom:15px;
-}
 
-footer a{
-display:block;
-color:#bbb;
-text-decoration:none;
-margin-bottom:8px;
+color:white;
+
+margin-bottom:15px;
+
 }
 
 .footer-bottom{
+
 margin-top:40px;
+
 text-align:center;
-}
-
-/* REVEAL */
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.menu-btn{display:flex;}
-
-nav{
-position:fixed;
-top:0;
-left:-100%;
-height:100%;
-width:260px;
-background:white;
-flex-direction:column;
-padding-top:80px;
-gap:20px;
-transition:.4s;
-}
-
-nav.active{left:0;}
-
-.hero h1{font-size:34px;}
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -388,18 +471,14 @@ nav.active{left:0;}
 
 <div class="logo">ExTJ Afrique</div>
 
-<div class="menu-btn" id="menuBtn">
-<span></span>
-<span></span>
-<span></span>
-</div>
+<nav>
 
-<nav id="menu">
 <a href="index.html">Accueil</a>
 <a href="actualite.html">Actualités</a>
 <a href="temoignage.html">Témoignages</a>
 <a href="#">Activisme</a>
 <a href="https://wa.me/+2250556348843">Contact</a>
+
 </nav>
 
 </header>
@@ -414,17 +493,19 @@ nav.active{left:0;}
 
 <p>Plateforme indépendante pour les témoignages, analyses et informations sur l'organisation des Témoins de Jéhovah en Afrique.</p>
 
-<a href="temoignage.html" style="text-decoration:none;color:white;">
+<a href="temoignage.html">
+
 <button>Lire les témoignages</button>
+
 </a>
 
 </div>
 
 </div>
 
-<!-- INTRO DESIGN -->
+<!-- INTRO -->
 
-<section class="intro-section reveal">
+<section class="intro-section">
 
 <div class="intro-container">
 
@@ -435,25 +516,47 @@ nav.active{left:0;}
 <div class="intro-grid">
 
 <div class="intro-text">
+
 Dans de nombreux pays d’Afrique, l’organisation des Témoins de Jéhovah est présentée comme un simple mouvement religieux. Pourtant, de plus en plus d’anciens membres à travers le monde témoignent des conséquences parfois lourdes que certaines règles et pratiques peuvent avoir sur la vie personnelle, familiale et sociale.
+
 </div>
 
 <div class="intro-text">
+
 Beaucoup rapportent un système très structuré où les décisions importantes — concernant la doctrine, les règles de conduite ou la discipline religieuse — sont centralisées au sein d’une direction basée aux États-Unis. Pour certains observateurs et anciens membres, cette organisation très hiérarchisée peut exercer une forte influence sur les croyances, les relations familiales et l’accès à certaines informations.
+
 </div>
 
 <div class="intro-text">
+
 En Afrique, où l’information critique sur les mouvements religieux reste parfois limitée, il est important que chacun puisse entendre différents témoignages et analyses. De nombreux anciens Témoins de Jéhovah africains commencent aujourd’hui à partager leurs expériences et à encourager une réflexion plus libre.
-</div>
 
-<div class="intro-text">
-Ce site a pour objectif de rassembler ces témoignages, de présenter des informations documentées et d’encourager chacun à examiner les faits avec esprit critique. La liberté de conscience implique aussi la liberté de poser des questions et de réfléchir par soi-même.
 </div>
 
 </div>
 
 <div class="intro-quote">
+
 "La liberté de conscience commence souvent par une simple question."
+
+</div>
+
+<div class="site-mission">
+
+<i class="fas fa-compass mission-icon"></i>
+
+<h3 class="mission-title">
+
+Pourquoi ce site existe
+
+</h3>
+
+<p>
+
+Ce site a pour objectif de rassembler des témoignages d’anciens membres, de présenter des informations documentées et d’encourager chacun à examiner les faits avec esprit critique. La liberté de conscience implique aussi la liberté de poser des questions et de réfléchir par soi-même.
+
+</p>
+
 </div>
 
 </div>
@@ -462,31 +565,40 @@ Ce site a pour objectif de rassembler ces témoignages, de présenter des inform
 
 <!-- MISSION -->
 
-<section class="reveal">
+<section>
 
 <h2 class="title">Notre Objectif</h2>
 
 <div class="grid">
 
-<div class="card reveal">
-<i class="fas fa-book-open"></i>
+<div class="card">
+
 <h3>Informer</h3>
-<p>Analyser les doctrines et pratiques de cette organisation.</p>
+
 <img src="imageDoctrine.png">
+
+<p>Analyser les doctrines et pratiques de cette organisation.</p>
+
 </div>
 
-<div class="card reveal">
-<i class="fas fa-hands-helping"></i>
+<div class="card">
+
 <h3>Soutenir</h3>
-<p>Aider ceux qui quittent ou veulent quitter cette organisation.</p>
+
 <img src="imageCommunaute.png">
+
+<p>Aider ceux qui quittent ou veulent quitter cette organisation.</p>
+
 </div>
 
-<div class="card reveal">
-<i class="fas fa-comments"></i>
+<div class="card">
+
 <h3>Donner la parole</h3>
-<p>Publier les témoignages d'anciens membres africains.</p>
+
 <img src="imageTemoignage.png">
+
+<p>Publier les témoignages d'anciens membres africains.</p>
+
 </div>
 
 </div>
@@ -495,14 +607,16 @@ Ce site a pour objectif de rassembler ces témoignages, de présenter des inform
 
 <!-- CTA -->
 
-<section class="cta reveal">
+<section class="cta">
 
 <h2>Rejoint la communauté</h2>
 
 <p>Partage ton témoignage et aide d'autres personnes.</p>
 
 <a href="https://wa.me/+2250556348843">
+
 <button>Envoyer un témoignage</button>
+
 </a>
 
 </section>
@@ -512,66 +626,33 @@ Ce site a pour objectif de rassembler ces témoignages, de présenter des inform
 <div class="footer-grid">
 
 <div>
+
 <h3>ExTJ Afrique</h3>
+
 <p>Plateforme indépendante d'information et de soutien.</p>
+
 </div>
 
 <div>
+
 <h3>Navigation</h3>
+
 <a href="index.html">Accueil</a>
 <a href="actualite.html">Actualités</a>
 <a href="temoignage.html">Temoignages</a>
-</div>
 
-<div>
-<h3>Contact</h3>
-<a href="https://wa.me/+2250556348843">Whatsapp</a>
 </div>
 
 </div>
 
 <div class="footer-bottom">
+
 © 2026 ExTJ Afrique
+
 </div>
 
 </footer>
 
-<script>
-
-const menuBtn=document.getElementById("menuBtn");
-const menu=document.getElementById("menu");
-
-menuBtn.addEventListener("click",function(){
-menu.classList.toggle("active");
-menuBtn.classList.toggle("open");
-});
-
-window.addEventListener("scroll",function(){
-const header=document.querySelector("header");
-header.classList.toggle("scrolled",window.scrollY>50);
-});
-
-function reveal(){
-
-let reveals=document.querySelectorAll(".reveal");
-
-for(let i=0;i<reveals.length;i++){
-
-let windowHeight=window.innerHeight;
-let elementTop=reveals[i].getBoundingClientRect().top;
-let elementVisible=150;
-
-if(elementTop<windowHeight-elementVisible){
-reveals[i].classList.add("active");
-}
-
-}
-
-}
-
-window.addEventListener("scroll",reveal);
-
-</script>
-
 </body>
+
 </html>
