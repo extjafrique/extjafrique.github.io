@@ -39,6 +39,25 @@ nav a:hover{color:#d4a017;}
 .hero button{margin-top:30px;padding:15px 35px;border:none;background:#d4a017;color:white;font-size:16px;border-radius:6px;cursor:pointer;transition:.3s;}
 .hero button:hover{background:#0b6e4f;transform:scale(1.05);}
 
+/* INTRO */
+.intro{
+background:white;
+padding:80px 6%;
+}
+.intro-box{
+max-width:900px;
+margin:auto;
+background:#ffffff;
+padding:50px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+line-height:1.8;
+font-size:16px;
+}
+.intro-box p{
+margin-bottom:18px;
+}
+
 /* SECTIONS */
 section{padding:100px 6%;}
 .title{text-align:center;font-size:34px;margin-bottom:60px;color:#0b6e4f;}
@@ -76,7 +95,7 @@ footer a{display:block;color:#bbb;text-decoration:none;margin-bottom:8px;}
 footer a:hover{color:white;}
 .footer-bottom{margin-top:40px;text-align:center;}
 
-/* REVEAL ANIMATION */
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(40px);transition:all 1s;}
 .reveal.active{opacity:1;transform:translateY(0);}
 
@@ -87,6 +106,7 @@ nav{position:fixed;top:0;left:-100%;height:100%;width:260px;background:white;fle
 nav a{padding:15px 30px;}
 nav.active{left:0;}
 .hero h1{font-size:34px;}
+.intro-box{padding:30px;}
 }
 </style>
 </head>
@@ -95,11 +115,13 @@ nav.active{left:0;}
 
 <header>
 <div class="logo">ExTJ Afrique</div>
+
 <div class="menu-btn" id="menuBtn">
 <span></span>
 <span></span>
 <span></span>
 </div>
+
 <nav id="menu">
 <a href="index.html">Accueil</a>
 <a href="actualite.html">Actualités</a>
@@ -114,81 +136,95 @@ nav.active{left:0;}
 <div>
 <h1>Ex Témoins de Jéhovah Afrique</h1>
 <p>Plateforme indépendante pour les témoignages, analyses et informations sur l'organisation des Témoins de Jéhovah en Afrique.</p>
-<a href="temoignage.html" style="text-decoration: none; color: white;"><button>Lire les témoignages</button></a>
+<a href="temoignage.html" style="text-decoration:none;color:white;"><button>Lire les témoignages</button></a>
 </div>
 </div>
+
+<!-- INTRODUCTION -->
+<section class="intro reveal">
+
+<div class="intro-box">
+
+<p>Dans de nombreux pays d’Afrique, l’organisation des Témoins de Jéhovah est présentée comme un simple mouvement religieux. Pourtant, de plus en plus d’anciens membres à travers le monde témoignent des conséquences parfois lourdes que certaines règles et pratiques peuvent avoir sur la vie personnelle, familiale et sociale.</p>
+
+<p>Beaucoup rapportent un système très structuré où les décisions importantes — concernant la doctrine, les règles de conduite ou la discipline religieuse — sont centralisées au sein d’une direction basée aux États-Unis. Pour certains observateurs et anciens membres, cette organisation très hiérarchisée peut exercer une forte influence sur les croyances, les relations familiales et l’accès à certaines informations.</p>
+
+<p>En Afrique, où l’information critique sur les mouvements religieux reste parfois limitée, il est important que chacun puisse entendre différents témoignages et analyses. De nombreux anciens Témoins de Jéhovah africains commencent aujourd’hui à partager leurs expériences et à encourager une réflexion plus libre.</p>
+
+<p>Ce site a pour objectif de rassembler ces témoignages, de présenter des informations documentées et d’encourager chacun à examiner les faits avec esprit critique. La liberté de conscience implique aussi la liberté de poser des questions et de réfléchir par soi-même.</p>
+
+</div>
+</section>
 
 <!-- MISSION -->
 <section class="reveal">
 <h2 class="title">Notre Objectif</h2>
+
 <div class="grid">
+
 <div class="card reveal">
 <i class="fas fa-book-open icon"></i>
 <h3>Informer</h3>
 <p>Analyser les doctrines et pratiques de cette organisation.</p>
-<img src="imageDoctrine.png" alt="">
+<img src="imageDoctrine.png">
 </div>
+
 <div class="card reveal">
 <i class="fas fa-hands-helping icon"></i>
 <h3>Soutenir</h3>
 <p>Aider ceux qui quittent ou veulent quitter cette organisation à reconstruire leur vie autour d'une nouvelle communauté.</p>
-<img src="imageCommunaute.png" alt="">
+<img src="imageCommunaute.png">
 </div>
+
 <div class="card reveal">
 <i class="fas fa-comments icon"></i>
 <h3>Donner la parole</h3>
 <p>Publier les témoignages d'anciens membres africains.</p>
-<img src="imageTemoignage.png" alt="">
+<img src="imageTemoignage.png">
 </div>
+
 </div>
 </section>
 
-<!-- ACTUALITES PAR PAYS -->
+<!-- ACTUALITES -->
 <section class="news reveal">
+
 <h2 class="title">Actualités récentes par pays</h2>
+
 <div class="country-filter">
 <button data-country="all">Tous</button>
 <button data-country="Côte d'Ivoire">Côte d'Ivoire</button>
 <button data-country="Congo">Congo</button>
 </div>
+
 <div class="grid">
-
-
-
 
 <div class="card reveal" data-country="Côte d'Ivoire">
 <i class="fas fa-globe-africa icon"></i>
 <h3>Côte d'Ivoire</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Fresh_blood.jpg" alt="">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Fresh_blood.jpg">
 <p>Elle meurt en refusant le sang...</p>
-<a href="affairecocody.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+<a href="affairecocody.html" style="text-decoration:none;color:white;"><button class="read-more">Lire la suite</button></a>
 </div>
-
-
-
-
-
 
 </div>
 </section>
 
 <!-- TEMOIGNAGES -->
 <section class="news reveal">
+
 <h2 class="title">Témoignages</h2>
+
 <div class="grid">
+
 <div class="card reveal">
 <i class="fas fa-user icon"></i>
 <h3>Salomon, Côte d'Ivoire</h3>
-<img src="imageSalomon.jpg" alt="">
+<img src="imageSalomon.jpg">
 <p>"J'ai quitté l'organisation et retrouvé ma liberté..."</p>
-<a href="temoignageguelable.html" style="text-decoration: none; color: white;"><button class="read-more">Lire la suite</button></a>
+<a href="temoignageguelable.html" style="text-decoration:none;color:white;"><button class="read-more">Lire la suite</button></a>
 </div>
 
-  
-
-
-
-  
 </div>
 </section>
 
@@ -196,104 +232,104 @@ nav.active{left:0;}
 <section class="cta reveal">
 <h2>Rejoint la communauté</h2>
 <p>Partage ton témoignage et aide d'autres personnes.</p>
-<a href="https://wa.me/+2250556348843" style="text-decoration: none; color: white;"><button>Envoyer un témoignage</button></a>
+<a href="https://wa.me/+2250556348843" style="text-decoration:none;color:white;"><button>Envoyer un témoignage</button></a>
 </section>
 
 <!-- FOOTER -->
 <footer class="reveal">
+
 <div class="footer-grid">
+
 <div>
 <h3>ExTJ Afrique</h3>
 <p>Plateforme indépendante d'information et de soutien.</p>
 </div>
+
 <div>
 <h3>Navigation</h3>
 <a href="index.html">Accueil</a>
 <a href="actualite.html">Actualités</a>
 <a href="temoignage.html">Temoignages</a>
 </div>
+
 <div>
 <h3>Ressources</h3>
 <a href="document.html">Documents</a>
 <a href="faq.html">FAQ</a>
 </div>
+
 <div>
 <h3>Contact</h3>
 <a href="salomongueable@gmail.com">Email</a>
 <a href="https://wa.me/+2250556348843">Whatsapp</a>
 <a href="#">Facebook</a>
 </div>
+
 </div>
+
 <div class="footer-bottom">
 © 2026 ExTJ Afrique
 </div>
+
 </footer>
 
-<!-- BOUTON RETOUR EN HAUT -->
 <button id="topBtn" style="display:none;position:fixed;bottom:40px;right:30px;background:#d4a017;border:none;padding:12px 18px;border-radius:50%;font-size:20px;cursor:pointer;z-index:1000;">↑</button>
 
 <script>
-// MENU MOBILE
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-menuBtn.addEventListener("click", function(){
+
+// MENU
+const menuBtn=document.getElementById("menuBtn");
+const menu=document.getElementById("menu");
+
+menuBtn.addEventListener("click",function(){
 menu.classList.toggle("active");
 menuBtn.classList.toggle("open");
 });
 
-// SCROLL EFFECT NAVBAR
+// NAVBAR
 window.addEventListener("scroll",function(){
 const header=document.querySelector("header");
 header.classList.toggle("scrolled",window.scrollY>50);
 });
 
-// REVEAL ANIMATION
+// REVEAL
 function reveal(){
 let reveals=document.querySelectorAll(".reveal");
+
 for(let i=0;i<reveals.length;i++){
+
 let windowHeight=window.innerHeight;
 let elementTop=reveals[i].getBoundingClientRect().top;
 let elementVisible=150;
+
 if(elementTop<windowHeight-elementVisible){
 reveals[i].classList.add("active");
 }
-}}
+
+}
+
+}
+
 window.addEventListener("scroll",reveal);
 
-// BOUTON RETOUR EN HAUT
+// TOP BUTTON
 let btn=document.getElementById("topBtn");
+
 window.onscroll=function(){
+
 if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){
 btn.style.display="block";
-}else{btn.style.display="none";}
+}else{
+btn.style.display="none";
+}
+
 };
-btn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
 
-// FILTRE DES ACTUALITES PAR PAYS
-const filterButtons = document.querySelectorAll('.country-filter button');
-const newsCards = document.querySelectorAll('.news .card');
+btn.onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
 
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const country = btn.getAttribute('data-country');
-    newsCards.forEach(card => {
-      if (country === "all" || card.getAttribute('data-country') === country) {
-        card.classList.remove('hide');
-      } else {
-        card.classList.add('hide');
-      }
-    });
-  });
-});
 </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
