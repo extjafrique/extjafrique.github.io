@@ -2,472 +2,97 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="icon.png">
-
 <title>ExTJ Afrique</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f4f6f8;
-color:#333;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f8;color:#333;}
 
 /* HEADER */
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;transition:.3s;}
+header.scrolled{padding:12px 6%;box-shadow:0 5px 20px rgba(0,0,0,0.15);}
+.logo{font-size:22px;font-weight:700;color:#0b6e4f;}
+nav{display:flex;gap:30px;}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:.3s;}
+nav a:hover{color:#d4a017;}
 
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 6%;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-z-index:1000;
-}
-
-.logo{
-font-size:22px;
-font-weight:700;
-color:#0b6e4f;
-}
-
-nav{
-display:flex;
-gap:30px;
-}
-
-nav a{
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
+/* HAMBURGER */
+.menu-btn{display:none;flex-direction:column;cursor:pointer;}
+.menu-btn span{height:3px;width:25px;background:#333;margin:4px 0;transition:.4s;}
+.menu-btn.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.menu-btn.open span:nth-child(2){opacity:0;}
+.menu-btn.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
 
 /* HERO */
-
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url("imageAcceuil.png");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-color:white;
-padding:20px;
-}
-
-.hero h1{
-font-size:50px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-}
-
-.hero button{
-margin-top:30px;
-padding:15px 35px;
-border:none;
-background:#d4a017;
-color:white;
-font-size:16px;
-border-radius:6px;
-cursor:pointer;
-}
-
-/* INTRO SECTION */
-
-.intro-section{
-
-padding:120px 6%;
-
-background:linear-gradient(135deg,#0b6e4f 0%, #062d21 100%);
-
-color:white;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-/* decoratif */
-
-.intro-section::before{
-content:"";
-position:absolute;
-top:-150px;
-left:-150px;
-width:350px;
-height:350px;
-background:rgba(255,255,255,0.05);
-border-radius:50%;
-}
-
-.intro-section::after{
-content:"";
-position:absolute;
-bottom:-150px;
-right:-150px;
-width:350px;
-height:350px;
-background:rgba(255,255,255,0.04);
-border-radius:50%;
-}
-
-.intro-container{
-
-max-width:1200px;
-
-margin:auto;
-
-position:relative;
-
-z-index:2;
-
-}
-
-.intro-title{
-
-font-family:'Playfair Display',serif;
-
-font-size:42px;
-
-text-align:center;
-
-color:#ffd86b;
-
-margin-bottom:20px;
-
-}
-
-.intro-line{
-
-width:90px;
-
-height:4px;
-
-background:#ffd86b;
-
-margin:30px auto 70px auto;
-
-border-radius:5px;
-
-}
-
-/* GRID */
-
-.intro-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:40px;
-
-}
-
-/* GLASS BOX */
-
-.intro-text{
-
-font-size:17px;
-
-line-height:1.9;
-
-background:rgba(255,255,255,0.08);
-
-padding:35px;
-
-border-radius:10px;
-
-backdrop-filter:blur(6px);
-
-transition:0.4s;
-
-}
-
-.intro-text:hover{
-
-transform:translateY(-6px);
-
-background:rgba(255,255,255,0.15);
-
-}
-
-/* LETTRE DECORATIVE */
-
-.intro-text:first-letter{
-
-font-size:40px;
-
-font-family:'Playfair Display',serif;
-
-color:#ffd86b;
-
-font-weight:700;
-
-}
-
-/* CITATION */
-
-.intro-quote{
-
-text-align:center;
-
-font-size:24px;
-
-margin-top:80px;
-
-font-family:'Playfair Display',serif;
-
-color:#ffd86b;
-
-position:relative;
-
-}
-
-.intro-quote:before{
-
-content:"“";
-
-font-size:80px;
-
-position:absolute;
-
-left:30%;
-
-top:-40px;
-
-color:rgba(255,255,255,0.2);
-
-}
-
-/* MANIFESTE */
-
-.site-mission{
-
-margin-top:70px;
-
-max-width:850px;
-
-margin-left:auto;
-
-margin-right:auto;
-
-text-align:center;
-
-padding:45px;
-
-background:rgba(0,0,0,0.25);
-
-border-radius:10px;
-
-border-left:4px solid #ffd86b;
-
-border-right:4px solid #ffd86b;
-
-backdrop-filter:blur(8px);
-
-}
-
-.mission-title{
-
-font-family:'Playfair Display',serif;
-
-font-size:28px;
-
-margin-bottom:20px;
-
-color:#ffd86b;
-
-}
-
-.mission-icon{
-
-font-size:32px;
-
-color:#ffd86b;
-
-margin-bottom:15px;
-
-}
-
-.site-mission p{
-
-font-size:18px;
-
-line-height:1.8;
-
-font-family:'Playfair Display',serif;
-
-}
+.hero{height:60vh;background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("imageAcceuil.png");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px;margin-top:80px;}
+.hero h1{font-size:45px;}
 
 /* SECTIONS */
+section{padding:100px 6%;}
+.title{text-align:center;font-size:34px;margin-bottom:60px;color:#0b6e4f;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;justify-items:center;}
 
-section{
-
-padding:100px 6%;
-
-}
-
-.title{
-
-text-align:center;
-
-font-size:34px;
-
-margin-bottom:60px;
-
-color:#0b6e4f;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:30px;
-
-}
-
-.card{
-
-background:white;
-
-padding:15px;
-
-border-radius:12px;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
-text-align:center;
-
-}
-
-.card img{
-
-width:100%;
-
-height:180px;
-
-object-fit:cover;
-
-border-radius:8px;
-
-margin-bottom:10px;
-
-}
-
-.news{
-
-background:#eef3f2;
-
-}
+.card{background:white;padding:15px 15px 30px 15px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:.4s;font-size:14px;text-align:center;}
+.card:hover{transform:translateY(-8px);}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;}
+.card h3{color:#d4a017;margin-bottom:10px;}
+.card p{margin-bottom:15px;}
+.card a button{padding:10px 20px;border:none;border-radius:5px;background:#d4a017;color:white;cursor:pointer;transition:.3s;}
+.card a button:hover{background:#0b6e4f;}
 
 /* CTA */
-
-.cta{
-
-background:#0b6e4f;
-
-color:white;
-
-text-align:center;
-
-padding:80px 20px;
-
-}
-
-.cta button{
-
-margin-top:20px;
-
-padding:14px 30px;
-
-border:none;
-
-background:#d4a017;
-
-color:white;
-
-border-radius:5px;
-
-}
+.cta{background:#0b6e4f;color:white;text-align:center;padding:80px 20px;}
+.cta button{margin-top:20px;padding:14px 30px;border:none;background:#d4a017;color:white;border-radius:5px;cursor:pointer;}
 
 /* FOOTER */
+footer{background:#111;color:#bbb;padding:60px 6%;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;}
+footer h3{color:white;margin-bottom:15px;}
+footer a{display:block;color:#bbb;text-decoration:none;margin-bottom:8px;}
+footer a:hover{color:white;}
+.footer-bottom{margin-top:40px;text-align:center;}
 
-footer{
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all 1s;}
+.reveal.active{opacity:1;transform:translateY(0);}
 
-background:#111;
-
-color:#bbb;
-
-padding:60px 6%;
-
+/* MOBILE */
+@media(max-width:768px){
+.menu-btn{display:flex;}
+nav{position:fixed;top:0;left:-100%;height:100%;width:260px;background:white;flex-direction:column;padding-top:80px;gap:20px;transition:.4s;z-index:1001;}
+nav a{padding:15px 30px;}
+nav.active{left:0;}
+.hero h1{font-size:32px;}
 }
-
-.footer-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-
-gap:40px;
-
-}
-
-footer h3{
-
-color:white;
-
-margin-bottom:15px;
-
-}
-
-.footer-bottom{
-
-margin-top:40px;
-
-text-align:center;
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <header>
+<div class="logo">ExTJ Afrique</div>
+
+<div class="menu-btn" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="menu">
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+<a href="#">Activisme</a>
+<a href="https://wa.me/+2250556348843">Contact</a>
+</nav>
+</header>
 
 <div class="logo">ExTJ Afrique</div>
 
