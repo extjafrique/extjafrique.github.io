@@ -620,38 +620,96 @@ Ce site a pour objectif de rassembler des témoignages d’anciens membres, de p
 
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer class="reveal">
 
 <div class="footer-grid">
 
 <div>
-
 <h3>ExTJ Afrique</h3>
-
 <p>Plateforme indépendante d'information et de soutien.</p>
-
 </div>
 
 <div>
-
 <h3>Navigation</h3>
-
 <a href="index.html">Accueil</a>
 <a href="actualite.html">Actualités</a>
 <a href="temoignage.html">Temoignages</a>
+</div>
 
+<div>
+<h3>Ressources</h3>
+<a href="document.html">Documents</a>
+<a href="faq.html">FAQ</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<a href="salomongueable@gmail.com">Email</a>
+<a href="https://wa.me/+2250556348843">Whatsapp</a>
+<a href="#">Facebook</a>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-
 © 2026 ExTJ Afrique
-
 </div>
 
 </footer>
 
+<button id="topBtn" style="display:none;position:fixed;bottom:40px;right:30px;background:#d4a017;border:none;padding:12px 18px;border-radius:50%;font-size:20px;cursor:pointer;z-index:1000;">↑</button>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+menuBtn.addEventListener("click", function(){
+menu.classList.toggle("active");
+menuBtn.classList.toggle("open");
+});
+
+window.addEventListener("scroll",function(){
+const header=document.querySelector("header");
+header.classList.toggle("scrolled",window.scrollY>50);
+});
+
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=150;
+
+if(elementTop<windowHeight-elementVisible){
+reveals[i].classList.add("active");
+}
+}
+}
+
+window.addEventListener("scroll",reveal);
+
+let btn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
+
+</script>
+
 </body>
 
 </html>
+
+
