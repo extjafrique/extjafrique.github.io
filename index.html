@@ -12,6 +12,68 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f8;color:#333;}
+
+/* HEADER */
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;transition:.3s;}
+header.scrolled{padding:12px 6%;box-shadow:0 5px 20px rgba(0,0,0,0.15);}
+.logo{font-size:22px;font-weight:700;color:#0b6e4f;}
+nav{display:flex;gap:30px;}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:.3s;}
+nav a:hover{color:#d4a017;}
+
+/* HAMBURGER */
+.menu-btn{display:none;flex-direction:column;cursor:pointer;}
+.menu-btn span{height:3px;width:25px;background:#333;margin:4px 0;transition:.4s;}
+.menu-btn.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.menu-btn.open span:nth-child(2){opacity:0;}
+.menu-btn.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+
+/* HERO */
+.hero{height:60vh;background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("imageAcceuil.png");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px;margin-top:80px;}
+.hero h1{font-size:45px;}
+
+/* SECTIONS */
+section{padding:100px 6%;}
+.title{text-align:center;font-size:34px;margin-bottom:60px;color:#0b6e4f;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;justify-items:center;}
+
+.card{background:white;padding:15px 15px 30px 15px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:.4s;font-size:14px;text-align:center;}
+.card:hover{transform:translateY(-8px);}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;}
+.card h3{color:#d4a017;margin-bottom:10px;}
+.card p{margin-bottom:15px;}
+.card a button{padding:10px 20px;border:none;border-radius:5px;background:#d4a017;color:white;cursor:pointer;transition:.3s;}
+.card a button:hover{background:#0b6e4f;}
+
+/* CTA */
+.cta{background:#0b6e4f;color:white;text-align:center;padding:80px 20px;}
+.cta button{margin-top:20px;padding:14px 30px;border:none;background:#d4a017;color:white;border-radius:5px;cursor:pointer;}
+
+/* FOOTER */
+footer{background:#111;color:#bbb;padding:60px 6%;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;}
+footer h3{color:white;margin-bottom:15px;}
+footer a{display:block;color:#bbb;text-decoration:none;margin-bottom:8px;}
+footer a:hover{color:white;}
+.footer-bottom{margin-top:40px;text-align:center;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all 1s;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:768px){
+.menu-btn{display:flex;}
+nav{position:fixed;top:0;left:-100%;height:100%;width:260px;background:white;flex-direction:column;padding-top:80px;gap:20px;transition:.4s;z-index:1001;}
+nav a{padding:15px 30px;}
+nav.active{left:0;}
+.hero h1{font-size:32px;}
+}
+</style>
+  
+<style>
 
 *{
 margin:0;
