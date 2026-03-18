@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="icon.png">
+<title>ExTJ Afrique</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f8;color:#333;}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 6%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
+transition:.3s;
+}
+
+header.scrolled{
+padding:12px 6%;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:#0b6e4f;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4a017;
+}
+
+/* MOBILE MENU */
+
+.menu-btn{
+display:none;
+flex-direction:column;
+cursor:pointer;
+}
+
+.menu-btn span{
+height:3px;
+width:25px;
+background:#333;
+margin:4px 0;
+transition:.4s;
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 6%;
+}
+
+.title{
+text-align:center;
+font-size:34px;
+margin-bottom:60px;
+color:#0b6e4f;
+}
+
+/* ARTICLE */
+
+.article-container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+border-left:6px solid #d4a017;
+}
+
+.article-container img{
+width:140px;
+border-radius:50%;
+margin-bottom:25px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.article-container h1{
+font-size:38px;
+color:#0b6e4f;
+margin-bottom:10px;
+text-align:center;
+}
+
+.article-meta{
+color:#888;
+margin-bottom:30px;
+text-align:center;
+font-style:italic;
+}
+
+.article-container h2{
+color:#d4a017;
+margin-top:35px;
+margin-bottom:10px;
+font-size:22px;
+}
+
+.article-container p{
+line-height:1.8;
+margin-bottom:15px;
+font-size:17px;
+}
+
+.article-container strong{
+color:#0b6e4f;
+}
+
+/* QUOTE STYLE */
+
+.quote{
+border-left:4px solid #d4a017;
+padding-left:15px;
+font-style:italic;
+margin:20px 0;
+color:#444;
+}
+
+/* CTA */
+
+.cta{
+background:#0b6e4f;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.cta button{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+background:#d4a017;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#bbb;
+padding:60px 6%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer h3{
+color:white;
+margin-bottom:15px;
+}
+
+footer a{
+display:block;
+color:#bbb;
+text-decoration:none;
+margin-bottom:8px;
+}
+
+footer a:hover{
+color:white;
+}
+
+.footer-bottom{
+margin-top:40px;
+text-align:center;
+}
+
+/* BUTTON TOP */
+
+#topBtn{
+display:none;
+position:fixed;
+bottom:40px;
+right:30px;
+background:#d4a017;
+border:none;
+padding:12px 18px;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
+z-index:1000;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">ExTJ Afrique</div>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+<a href="#">Activisme</a>
+<a href="https://wa.me/+2250556348843">Contact</a>
+</nav>
+</header>
+
+<section>
+
+<div class="article-container">
+
+<img src="imageSalomon.jpg">
+
+<h1>La Porte</h1>
+
+<div class="article-meta">
+Une histoire simple… qui révèle un paradoxe troublant
+</div>
+
+<p>Il est neuf heures du matin.</p>
+<p>Dans un quartier tranquille, quelqu’un frappe à une porte.</p>
+
+<p><strong>Bien habillées. Polies. Avec un sourire sincère.</strong></p>
+
+<div class="quote">« Bonjour, nous partageons un message biblique. »</div>
+
+<p>Elle hésite… puis répond :</p>
+
+<p><strong>« Entrez. »</strong></p>
+
+<h2>Une scène mondiale</h2>
+
+<p><strong>Afrique. Europe. Amérique.</strong></p>
+<p>Des millions de portes s’ouvrent.</p>
+
+<p>Parce que les gens acceptent encore de discuter.</p>
+
+<h2>Le détail oublié</h2>
+
+<p><strong>Beaucoup étaient autrefois dans ces religions.</strong></p>
+
+<p>Mais leurs anciennes églises…</p>
+
+<p><strong>ne leur ont pas fermé la porte.</strong></p>
+
+<h2>Mais quand quelqu’un part…</h2>
+
+<p>Tout change.</p>
+
+<p><strong>Silence. Distance. Rupture.</strong></p>
+
+<h2>Le paradoxe</h2>
+
+<p>On peut entrer librement.</p>
+<p><strong>Mais sortir… coûte tout.</strong></p>
+
+<h2>Imagine</h2>
+
+<p>Si tout le monde faisait pareil…</p>
+
+<p><strong>plus aucune porte ne s’ouvrirait.</strong></p>
+
+<h2>La vraie question</h2>
+
+<p>
+Une vérité a-t-elle besoin d’isoler…
+</p>
+
+<p>
+ou peut-elle affronter les questions ?
+</p>
+
+<p><strong>
+La liberté religieuse…
+</strong></p>
+
+<p><strong>
+ce n’est pas seulement entrer.
+</strong></p>
+
+<p><strong>
+C’est pouvoir partir.
+</strong></p>
+
+<p><strong>
+Sans perdre ceux qu’on aime.
+</strong></p>
+
+</div>
+
+</section>
+
+<section class="cta">
+<h2>Rejoins la communauté</h2>
+<p>Partage ton témoignage et aide d'autres personnes.</p>
+<a href="https://wa.me/+2250556348843">
+<button>Envoyer un témoignage</button>
+</a>
+</section>
+
+<footer>
+<div class="footer-grid">
+
+<div>
+<h3>ExTJ Afrique</h3>
+<p>Plateforme indépendante d'information et de soutien.</p>
+</div>
+
+<div>
+<h3>Navigation</h3>
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<a href="mailto:salomongueable@gmail.com">Email</a>
+<a href="https://wa.me/+2250556348843">Whatsapp</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 ExTJ Afrique
+</div>
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script>
+
+window.onscroll=function(){
+let btn=document.getElementById("topBtn");
+if(document.documentElement.scrollTop>300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+document.getElementById("topBtn").onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
+
+</script>
+
+</body>
+</html>
