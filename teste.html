@@ -32,6 +32,57 @@ section{padding:120px 6%;}
 .article-container h1{font-size:36px;color:#0b6e4f;margin-bottom:10px;text-align:center;} 
 .article-meta{color:#888;margin-bottom:30px;text-align:center;} 
 .article-container p{line-height:1.8;margin-bottom:15px;font-size:16px;} 
+
+/* NOUVEAU DESIGN ARTICLE */
+.source-box{
+background:#f1f5f9;
+border-left:5px solid #0b6e4f;
+padding:15px 20px;
+margin:25px 0;
+border-radius:8px;
+font-size:14px;
+}
+
+.source-box a{
+color:#0b6e4f;
+text-decoration:none;
+font-weight:500;
+}
+
+.source-box a:hover{
+text-decoration:underline;
+}
+
+.testimony-box{
+background:#fff8e6;
+border-left:5px solid #d4a017;
+padding:20px;
+margin:30px 0;
+border-radius:10px;
+font-style:italic;
+position:relative;
+}
+
+.testimony-box::before{
+content:"\f10d";
+font-family:"Font Awesome 6 Free";
+font-weight:900;
+position:absolute;
+top:-10px;
+left:15px;
+font-size:30px;
+color:#d4a017;
+opacity:0.3;
+}
+
+.highlight{
+background:#0b6e4f;
+color:white;
+padding:3px 8px;
+border-radius:4px;
+}
+
+/* CTA + FOOTER */
 .cta{background:#0b6e4f;color:white;text-align:center;padding:80px 20px;} 
 .cta button{margin-top:20px;padding:14px 30px;border:none;background:#d4a017;color:white;border-radius:5px;cursor:pointer;} 
 footer{background:#111;color:#bbb;padding:60px 6%;} 
@@ -42,7 +93,15 @@ footer a:hover{color:white;}
 .footer-bottom{margin-top:40px;text-align:center;} 
 .reveal{opacity:0;transform:translateY(40px);transition:all 1s;} 
 .reveal.active{opacity:1;transform:translateY(0);} 
-@media(max-width:768px){.menu-btn{display:flex;} nav{position:fixed;top:0;left:-100%;height:100%;width:260px;background:white;flex-direction:column;padding-top:80px;gap:20px;transition:.4s;z-index:1001;} nav a{padding:15px 30px;} nav.active{left:0;} .article-container{padding:25px;} .article-container h1{font-size:26px;}}
+
+@media(max-width:768px){
+.menu-btn{display:flex;}
+nav{position:fixed;top:0;left:-100%;height:100%;width:260px;background:white;flex-direction:column;padding-top:80px;gap:20px;transition:.4s;z-index:1001;}
+nav a{padding:15px 30px;}
+nav.active{left:0;}
+.article-container{padding:25px;}
+.article-container h1{font-size:26px;}
+}
 </style>
 </head>
 
@@ -63,96 +122,74 @@ footer a:hover{color:white;}
 <section class="reveal">
 <div class="article-container">
 
-<h1> Changement dans la doctrine sur le sang chez les Témoins de Jéhovah : une décision qui dérange</h1>
+<h1>Changement dans la doctrine sur le sang : une décision qui dérange</h1>
 <div class="article-meta">Publié sur ExTJ Afrique</div>
 
-<!-- IMAGE ILLUSTRATIVE -->
-<img src="https://www.anesthesie-beaujolais.com/wp-content/uploads/2021/11/img_transfusion.jpg" alt="Illustration">
+<img src="https://www.anesthesie-beaujolais.com/wp-content/uploads/2021/11/img_transfusion.jpg">
 
 <p>Il y a des silences qui pèsent plus lourd que des mots.</p>
 <p>Et il y a des décisions… qui arrivent trop tard.</p>
 
-<p>Pendant des années, chez les Témoins de Jéhovah, une règle était claire. Tranchante. Incontestable.</p>
-
-<p><strong>Le sang ne devait pas être accepté.</strong></p>
+<p><span class="highlight">Le sang ne devait pas être accepté.</span></p>
 
 <p>Pas celui des autres. Et même pas… le sien.</p>
 
-<p>La transfusion autologue programmée — prélever son propre sang, le conserver, puis le réinjecter — était rejetée.</p>
-
-<p>Refusée. Condamnée.</p>
-
-<!-- LIEN PREUVE -->
-<p><em>https://www.jw.org/finder?wtlocale=F&docid=1989169&srctype=wol&srcid=share&par=8</em></p>
-
-<p>Pourquoi ? Parce qu’on disait que ce n’était pas biblique. Parce qu’on affirmait que Dieu le désapprouvait.</p>
-
-<!-- IMAGE ILLUSTRATIVE -->
-<img src="https://m.media-amazon.com/images/I/61Tt4QxNbKL._AC_UY1000_.jpg" alt="Illustration">
+<div class="source-box">
+📎 Source officielle :
+<a href="https://www.jw.org/finder?wtlocale=F&docid=1989169&srctype=wol&srcid=share&par=8" target="_blank">
+Voir la publication
+</a>
+</div>
 
 <p>Alors ils ont obéi.</p>
 <p>Ils ont signé. Ils ont refusé.</p>
-<p>Ils ont regardé les médecins dans les yeux… et ont dit non.</p>
 
-<p>Certains étaient jeunes. D’autres avaient une famille. Des enfants.</p>
+<p><strong>Ils ont regardé les médecins… et ont dit non.</strong></p>
 
-<p>Ils auraient pu vivre.</p>
+<p>Certains étaient jeunes.</p>
+<p>D’autres avaient une famille.</p>
 
-<p>Mais ils ont choisi d’obéir à ce qu’ils croyaient être une vérité divine.</p>
+<p><span class="highlight">Ils auraient pu vivre.</span></p>
 
-<p>Et ils sont morts.</p>
+<div class="testimony-box">
+Ma maman est décédée en août 2020… leucémie.  
+Elle a refusé les transfusions.  
+Elle avait 66 ans.
+</div>
 
-<!-- LIEN TEMOIGNAGE -->
-<p><em>Ma maman est décédée en août 2020..... leucémie et elle a refusait les transfusions.......elle avait 66ans ....</em></p>
+<p><span class="highlight">Et ils sont morts.</span></p>
+
+<img src="https://www.simplycatholic.com/wp-content/uploads/2019/02/bible-1108074_1920.jpg">
 
 <p>Puis un jour… sans bruit.</p>
 
-<p>Tout a changé.</p>
+<p><strong>Tout a changé.</strong></p>
 
 <p>Ce qui était interdit… est devenu permis.</p>
 
-<p>Ce qui était “contraire à Dieu”… ne l’est plus.</p>
+<p>Pas un mot pour les morts.</p>
+<p>Pas une excuse.</p>
 
-<!-- IMAGE ILLUSTRATIVE -->
-<img src="https://www.simplycatholic.com/wp-content/uploads/2019/02/bible-1108074_1920.jpg" alt="Illustration">
-
-<p><strong>Qu’est-ce qui a changé ?</strong></p>
-
-<p>La Bible ? Dieu ? Ou simplement… l’interprétation des hommes ?</p>
-
-<p>Pas un mot pour ceux qui ont perdu la vie.</p>
-<p>Pas une seule excuse.</p>
-
-<p>Lors de leur assemblée annuelle de 2024, une déclaration a été faite :</p>
-
-<p><em>« Le Collège Central ne présentera pas d’excuses lorsqu’il y a des changements de doctrine. »</em></p>
-
-
+<div class="source-box">
+📎 Déclaration 2024 :  
+« Le Collège Central ne présentera pas d’excuses lorsqu’il y a des changements de doctrine. »
+</div>
 
 <p>Alors tout s’explique.</p>
 
 <p>Ce silence n’est pas un oubli.</p>
-
 <p>C’est une position.</p>
 
 <p>Mais ce silence… résonne.</p>
 
-<p>Il résonne dans les chambres d’hôpital.</p>
+<p>Dans les hôpitaux.</p>
 <p>Dans les familles brisées.</p>
 
-<p>Parce qu’au fond, la vraie question n’est pas seulement doctrinale.</p>
+<p><strong>La vraie question est humaine :</strong></p>
 
-<p>Elle est humaine.</p>
+<p>Comment une règle censée venir de Dieu peut-elle conduire à la mort… puis changer sans responsabilité ?</p>
 
-<p>Comment une règle présentée comme venant de Dieu peut-elle conduire à la mort… puis être modifiée sans responsabilité ?</p>
-
-<p>Ce n’est pas seulement une contradiction.</p>
-
-<p>C’est une fracture.</p>
-
-<p>Aujourd’hui, ce qui était interdit est permis.</p>
-
-<p>Mais pour certains… il est déjà trop tard.</p>
+<p><span class="highlight">Pour certains… il est déjà trop tard.</span></p>
 
 </div>
 </section>
@@ -160,31 +197,23 @@ footer a:hover{color:white;}
 <section class="cta reveal">
 <h2>Rejoint la communauté</h2>
 <p>Partage ton témoignage et aide d'autres personnes.</p>
-<a href="https://wa.me/+2250556348843" style="text-decoration:none;color:white;"><button>Envoyer un témoignage</button></a>
+<a href="https://wa.me/+2250556348843"><button>Envoyer un témoignage</button></a>
 </section>
 
 <footer class="reveal">
 <div class="footer-grid">
 <div><h3>ExTJ Afrique</h3><p>Plateforme indépendante d'information et de soutien.</p></div>
-<div><h3>Navigation</h3><a href="index.html">Accueil</a><a href="actualite.html">Actualités</a><a href="temoignage.html">Témoignages</a></div>
-<div><h3>Ressources</h3><a href="document.html">Documents</a><a href="faq.html">FAQ</a></div>
-<div><h3>Contact</h3><a href="mailto:salomongueable@gmail.com">Email</a><a href="https://wa.me/+2250556348843">Whatsapp</a></div>
+<div><h3>Navigation</h3><a href="index.html">Accueil</a></div>
+<div><h3>Ressources</h3><a href="#">Documents</a></div>
+<div><h3>Contact</h3><a href="mailto:salomongueable@gmail.com">Email</a></div>
 </div>
 <div class="footer-bottom">© 2026 ExTJ Afrique</div>
 </footer>
-
-<button id="topBtn" style="display:none;position:fixed;bottom:40px;right:30px;background:#d4a017;border:none;padding:12px 18px;border-radius:50%;font-size:20px;cursor:pointer;z-index:1000;">↑</button>
 
 <script>
 const menuBtn=document.getElementById("menuBtn");
 const menu=document.getElementById("menu");
 menuBtn.onclick=function(){menu.classList.toggle("active");menuBtn.classList.toggle("open");};
-window.addEventListener("scroll",function(){document.querySelector("header").classList.toggle("scrolled",window.scrollY>50);});
-function reveal(){let reveals=document.querySelectorAll(".reveal");for(let i=0;i<reveals.length;i++){let windowHeight=window.innerHeight;let elementTop=reveals[i].getBoundingClientRect().top;let elementVisible=150;if(elementTop<windowHeight-elementVisible){reveals[i].classList.add("active");}}}
-window.addEventListener("scroll",reveal);
-let btn=document.getElementById("topBtn");
-window.onscroll=function(){if(document.body.scrollTop>300||document.documentElement.scrollTop>300){btn.style.display="block";}else{btn.style.display="none";}};
-btn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
 </script>
 
 </body>
