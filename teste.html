@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="icon.png">
+<title>ExTJ Afrique</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f8;color:#333;}
+
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;transition:.3s;}
+header.scrolled{padding:12px 6%;box-shadow:0 5px 20px rgba(0,0,0,0.15);} 
+
+.logo{font-size:22px;font-weight:700;color:#0b6e4f;}
+
+nav{display:flex;gap:30px;}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:.3s;}
+nav a:hover{color:#d4a017;}
+
+.menu-btn{display:none;flex-direction:column;cursor:pointer;}
+.menu-btn span{height:3px;width:25px;background:#333;margin:4px 0;transition:.4s;}
+
+.menu-btn.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);} 
+.menu-btn.open span:nth-child(2){opacity:0;} 
+.menu-btn.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);} 
+
+section{padding:120px 6%;}
+
+.article-container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.article-container h1{
+font-size:34px;
+color:#0b6e4f;
+text-align:center;
+margin-bottom:20px;
+}
+
+.article-container p{
+line-height:1.9;
+margin:18px 0;
+font-size:16px;
+}
+
+.article-content hr{
+border:none;
+height:1px;
+background:#eee;
+margin:35px 0;
+}
+
+.highlight{
+font-size:22px;
+font-weight:600;
+text-align:center;
+color:#d4a017;
+margin:25px 0;
+}
+
+.strong{
+font-weight:600;
+color:#0b6e4f;
+}
+
+.big{
+font-size:20px;
+font-weight:600;
+text-align:center;
+margin:20px 0;
+color:#111;
+}
+
+.question{
+font-weight:600;
+font-size:18px;
+margin-top:20px;
+}
+
+.answer{
+color:#d4a017;
+font-weight:600;
+}
+
+.final{
+font-size:22px;
+font-weight:700;
+text-align:center;
+color:#0b6e4f;
+margin-top:30px;
+}
+
+.cta{
+background:#0b6e4f;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.cta button{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+background:#d4a017;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+footer{
+background:#111;
+color:#bbb;
+padding:60px 6%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer h3{color:white;margin-bottom:15px;}
+footer a{display:block;color:#bbb;text-decoration:none;margin-bottom:8px;}
+footer a:hover{color:white;}
+
+.footer-bottom{
+margin-top:40px;
+text-align:center;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+.menu-btn{display:flex;}
+nav{
+position:fixed;
+top:0;
+left:-100%;
+height:100%;
+width:260px;
+background:white;
+flex-direction:column;
+padding-top:80px;
+gap:20px;
+transition:.4s;
+z-index:1001;
+}
+nav a{padding:15px 30px;}
+nav.active{left:0;}
+.article-container{padding:25px;}
+.article-container h1{font-size:26px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">ExTJ Afrique</div>
+<div class="menu-btn" id="menuBtn"><span></span><span></span><span></span></div>
+<nav id="menu">
+<a href="index.html">Accueil</a>
+<a href="actualite.html">Actualités</a>
+<a href="temoignage.html">Témoignages</a>
+<a href="#">Activisme</a>
+<a href="https://wa.me/+2250556348843">Contact</a>
+</nav>
+</header>
+
+<section class="reveal">
+<div class="article-container">
+
+<h1>🩸 Ils refusent de donner leur sang… mais vivent de celui des autres</h1>
+
+<div style="height:220px;border-radius:10px;background:linear-gradient(135deg,#eee,#ddd);display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;margin:25px 0;">
+Image d’illustration ici
+</div>
+
+<div class="article-content">
+
+<p>La nuit est tombée sur Cotonou au Benin.</p>
+
+<p>Dans un couloir d’hôpital, la lumière est froide.</p>
+
+<p>Sur un lit, quelqu’un respire difficilement.<br>
+Chaque souffle est un combat.<br>
+Chaque seconde compte.</p>
+
+<p class="highlight">“Il faut du sang.”</p>
+
+<hr>
+
+<p>Alors tout s’active.</p>
+
+<p>Un frère appelle.<br>
+Une mère pleure.<br>
+Un ami court dans la nuit.</p>
+
+<p class="strong">Parce Le sang, ce n’est pas un symbole.<br>
+Ce n’est pas une idée religieuse.</p>
+
+<p class="big">C’est une vie… ou une mort.</p>
+
+<p class="highlight">Quelqu’un doit donner.</p>
+
+<hr>
+
+<p>Quelqu’un doit tendre le bras.<br>
+Quelqu’un doit accepter de perdre un peu de lui-même…<br>
+pour sauver un inconnu.</p>
+
+<p>Parce que le sang ne se fabrique pas.<br>
+Il ne tombe pas du ciel.</p>
+
+<p class="strong">Il vient d’un autre être humain.</p>
+
+<hr>
+
+<p>Mais dans cette même ville,<br>dans cette même nuit…</p>
+
+<p class="big">Il y a ceux qui refusent.</p>
+
+<hr>
+
+<p>Ils refusent de donner leur sang.</p>
+
+<p>Pas par peur.</p>
+
+<p>Mais par conviction.</p>
+
+<p>Parce qu’on leur a appris que donner son sang,<br>
+c’est désobéir à Dieu.</p>
+
+<p>Alors ils disent non.</p>
+
+<p>Même si quelqu’un meurt.<br>
+Même si eux-mêmes pourraient un jour en avoir besoin.</p>
+
+<hr>
+
+<p class="big">Mais la réalité… est plus dérangeante.</p>
+
+<hr>
+
+<p>Ils acceptent.</p>
+
+<p class="strong">Mais ce qui vient du sang.</p>
+
+<hr>
+
+<p class="question">Les fractions viennent d’où ?</p>
+<p class="answer">Reponse : du sang !</p>
+
+<p class="question">Ce sang lui… il vient d’où ?</p>
+
+<hr>
+
+<p>Il vient de ceux qui donnent.</p>
+
+<p class="big">Et pourtant… c’est leur sang qui sauve des vies.</p>
+
+<hr>
+
+<p class="big">Voilà le paradoxe.</p>
+
+<hr>
+
+<p>Refuser de donner… mais bénéficier du sacrifice des autres.</p>
+
+<hr>
+
+<p class="highlight">“Ta vie compte, même si je ne te connais pas.”</p>
+
+<hr>
+
+<p class="question">Peut-on refuser de donner… et accepter que d’autres le fassent à sa place ?</p>
+
+<hr>
+
+<p class="strong">Des personnes donnent leur sang… pour que d’autres puissent vivre.</p>
+
+<p class="final">Et ce contraste ne peut pas être ignoré.</p>
+
+</div>
+</div>
+</section>
+
+<section class="cta reveal">
+<h2>Rejoint la communauté</h2>
+<p>Partage ton témoignage et aide d'autres personnes.</p>
+<a href="https://wa.me/+2250556348843"><button>Envoyer un témoignage</button></a>
+</section>
+
+<footer class="reveal">
+<div class="footer-grid">
+<div><h3>ExTJ Afrique</h3><p>Plateforme indépendante d'information et de soutien.</p></div>
+<div><h3>Navigation</h3><a href="index.html">Accueil</a><a href="actualite.html">Actualités</a><a href="temoignage.html">Témoignages</a></div>
+<div><h3>Ressources</h3><a href="document.html">Documents</a><a href="faq.html">FAQ</a></div>
+<div><h3>Contact</h3><a href="mailto:salomongueable@gmail.com">Email</a><a href="https://wa.me/+2250556348843">Whatsapp</a></div>
+</div>
+<div class="footer-bottom">© 2026 ExTJ Afrique</div>
+</footer>
+
+<button id="topBtn" style="display:none;position:fixed;bottom:40px;right:30px;background:#d4a017;border:none;padding:12px 18px;border-radius:50%;font-size:20px;cursor:pointer;">↑</button>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const menu=document.getElementById("menu");
+menuBtn.onclick=function(){menu.classList.toggle("active");menuBtn.classList.toggle("open");};
+
+window.addEventListener("scroll",function(){
+document.querySelector("header").classList.toggle("scrolled",window.scrollY>50);
+});
+
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=150;
+if(elementTop<windowHeight-elementVisible){
+reveals[i].classList.add("active");
+}
+}
+}
+window.addEventListener("scroll",reveal);
+
+let btn=document.getElementById("topBtn");
+window.onscroll=function(){
+if(document.body.scrollTop>300||document.documentElement.scrollTop>300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
+</script>
+
+</body>
+</html>
